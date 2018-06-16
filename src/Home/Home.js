@@ -6,7 +6,7 @@ import api from '../../config/api';
 
 import { Card, ListItem, Button, Icon } from 'react-native-elements'
 
-/*const users = [
+const users = [
     {
        name: 'brynn',
        avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
@@ -14,7 +14,7 @@ import { Card, ListItem, Button, Icon } from 'react-native-elements'
    ]
    
 
-*/
+
 
 class Home extends Component {
 
@@ -26,7 +26,7 @@ class Home extends Component {
   }
 
   componentWillMount(){
-    /*api.getRovers().then((res) =>{
+    api.getRovers().then((res) =>{
       this.setState({
         copyright:res.copyright,
         hdurl:res.hdurl,
@@ -34,17 +34,17 @@ class Home extends Component {
         explanation:res.explanation,
         title:res.title
       })
-    });*/
-    api.getImages().then((res) =>{
+    });
+    /*api.getImages().then((res) =>{
       this.setState({
         data:res.photos
       })
-    });
+    });*/
   }
 
     render() {
         console.log("Rovers: ", this.state.id);
-        return (
+        /*return (
           <View>
             <FlatList>
               data={this.state.data}
@@ -58,8 +58,8 @@ class Home extends Component {
             </FlatList>
           </View>
           
-        )
-        /*return (
+        )*/
+        return (
           <View>
           <Card
             title={this.state.title}
@@ -89,7 +89,7 @@ class Home extends Component {
            }
          </Card>
          </View>
-        )*/
+        )
       }
 }
 
