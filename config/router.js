@@ -7,6 +7,8 @@ import { Icon } from 'react-native-elements';
 import Login from '../src/Login/Login';
 import Register from '../src/Register/Register';
 import Home from '../src/Home/Home';
+import Bbc from '../src/Views/Bbc';
+import WallStreet from '../src/Views/WallStreet';
 import { Platform } from 'react-native'
 
 const tabBarOptions = Platform.OS === 'ios' ? 
@@ -29,5 +31,11 @@ export const Tabs = createBottomTabNavigator({
     },
     Home:{
         screen:Home,
+    },
+    Bbc:{
+        screen:Bbc,
+    },
+    WallStreet:{
+        screen:WallStreet,
     }
 });

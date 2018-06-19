@@ -16,6 +16,10 @@ var api = {
     getBbc(){
         var url = 'https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=44d043ee9dcd436da97fc71880cf3a1b';
         return fetch(url).then((res)=> res.json());
+    },
+    getWallStreet(){
+        var url = 'https://newsapi.org/v2/everything?domains=wsj.com&apiKey=44d043ee9dcd436da97fc71880cf3a1b';
+        return fetch(url).then((res)=> res.json());
     }
 };
 
