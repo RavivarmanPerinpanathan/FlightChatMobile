@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, Image, FlatList, WebView } from 'react-native';
+import { Text, View, StyleSheet, Image, FlatList, WebView,  } from 'react-native';
 import api from '../../config/api';
 import { Card, ListItem, Button, Icon, SCREEN_WIDTH, SCREEN_HEIGHT } from 'react-native-elements'
 
@@ -18,7 +18,7 @@ class Bbc extends Component {
         <Card style={{width:50, height:50}}
           title={item.title}
           image={{ uri:item.urlToImage }}
-          imageStyle={{width:345, height:200}}
+          imageStyle={{width:345, height:200, alignItems: 'center'}}
           containerStyle={{ padding: 0, marginTop: 50 }}>
           <Text style={{ marginBottom: 10 }}>
             {item.description}

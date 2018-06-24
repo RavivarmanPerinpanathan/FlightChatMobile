@@ -24,7 +24,7 @@ class LoginForm extends Component {
                             placeholderTextColor='rgba(225,225,225,0.7)' 
                             secureTextEntry/>
 
-                <TouchableOpacity style={styles.buttonContainer} onPress>
+                <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.navigate('Bbc')}>
                             <Text  style={styles.buttonText}>LOGIN</Text>
                 </TouchableOpacity>
             </View>

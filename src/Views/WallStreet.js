@@ -18,7 +18,7 @@ class WallStreet extends Component {
         <Card style={{width:50, height:50}}
           title={item.title}
           image={{ uri:item.urlToImage }}
-          imageStyle={{width:345, height:200}}
+          imageStyle={{width:345, height:200, alignItems: 'center',}}
           containerStyle={{ padding: 0, marginTop: 50 }}>
           <Text style={{ marginBottom: 10 }}>
             {item.description}
