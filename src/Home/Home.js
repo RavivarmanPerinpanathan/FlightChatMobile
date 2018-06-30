@@ -5,16 +5,19 @@ import {
   Card,
 } from 'react-native-elements';
 
-import {
-  StackNavigator,
-} from 'react-navigation';
+const bbcLogo = require('../../images/bbc_logo.png');
+const wsjLogo = require('../../images/wsj_logo.png');
 
-import LoginScreen from '../Login/Login';
+// import {
+//  StackNavigator,
+// } from 'react-navigation';
+
+// import LoginScreen from '../Login/Login';
 
 class Home extends Component {
-  App = StackNavigator({
-    Home: { screen: LoginScreen },
-  });
+  // App = StackNavigator({
+  //  Home: { screen: LoginScreen },
+  // });
 
   constructor() {
     super();
@@ -36,14 +39,14 @@ class Home extends Component {
         <TouchableHighlight onPress={() => navigation.navigate('Bbc')}>
           <Card
             containerStyle={{ padding: 0, marginTop: 50 }}
-            image={require('../../images/bbc_logo.png')}
+            image={bbcLogo}
             imageStyle={{ width: 340, height: 180 }}
           />
         </TouchableHighlight>
 ,
         <TouchableHighlight onPress={() => navigation.navigate('WallStreet')}>
           <Card
-            image={require('../../images/wsj_logo.png')}
+            image={wsjLogo}
             imageStyle={{ width: 340, height: 180 }}
           />
         </TouchableHighlight>

@@ -1,5 +1,5 @@
 import React, { Component} from 'react'
-import {Tabs} from './config/router'
+import { Tabs } from './config/router'
 
 class App extends Component{
   render() {

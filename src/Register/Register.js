@@ -5,6 +5,8 @@ import {
 } from 'react-native';
 import RegisterForm from './RegisterForm';
 
+const logo = require('../../images/Logo.png');
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -25,7 +27,7 @@ const styles = StyleSheet.create({
 const Register = () => (
   <KeyboardAvoidingView behavior="padding" style={styles.container}>
     <View style={styles.registerContainer}>
-      <Image resizeMode="contain" style={styles.logo} source={require('../../images/Logo.png')} />
+      <Image resizeMode="contain" style={styles.logo} source={logo} />
     </View>
 
     <View style={styles.formContainer}>
