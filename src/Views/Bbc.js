@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, Image, FlatList, WebView,  } from 'react-native';
+import { Text, View, StyleSheet, Image, FlatList, WebView, Linking } from 'react-native';
 import api from '../../config/api';
 import { Card, ListItem, Button, Icon, SCREEN_WIDTH, SCREEN_HEIGHT } from 'react-native-elements'
 
@@ -23,15 +23,12 @@ class Bbc extends Component {
           <Text style={{ marginBottom: 10 }}>
             {item.description}
           </Text>
-          <WebView
-            source={{ uri: item.url }}
-            style={{ marginTop: 20 }}
-          />
-          <Button
+          
+          <Button onPress={()=>{ Linking.openURL(item.url)}}
             icon={<Icon name='code' color='#ffffff' />}
             backgroundColor='#03A9F4'
             buttonStyle={{ borderRadius: 5, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
-            title='VIEW NOW' />
+            title='READ MORE' />
         </Card>
       </View>
     )

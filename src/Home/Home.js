@@ -30,7 +30,7 @@ class Home extends Component {
       name
     })
   }
-  render() {
+  /*render() {
     const routes = [
       {screen: Bbc, index: 0},
       {screen: WallStreet, index: 1},
@@ -54,29 +54,29 @@ class Home extends Component {
       />
     );
   }
-}
-/*
+}*/
+
   render() {
     
     //console.log("Rovers: ", this.state.data);
     return (
       <View>
 
-        <TouchableHighlight onPress={() => this.navigate('bbcpage')}>
+        <TouchableHighlight onPress={() => this.props.navigation.navigate('Bbc')}>
         <Card containerStyle={{ padding: 0, marginTop: 50 }}
-          image={require('../../images/bbc_logo.png')} imageStyle={{width:345, height:200}}>
+          image={require('../../images/bbc_logo.png')} imageStyle={{width:340, height:180}}>
         </Card>
         </TouchableHighlight>,
         <TouchableHighlight onPress={() => this.props.navigation.navigate('WallStreet')}>
         <Card
-          image={require('../../images/wsj_logo.png')} imageStyle={{width:345, height:200}}>
+          image={require('../../images/wsj_logo.png')} imageStyle={{width:340, height:180}}>
         </Card>
         </TouchableHighlight>
       </View>
     )
   }
 }
-*/
+
 const styles = StyleSheet.create({
   
   card: {
