@@ -13,7 +13,7 @@ class Bbc extends Component {
       data: [],
     };
 
-    this.renderItem = this.renderItem.bind(this)
+    this.renderItem = this.renderItem.bind(this);
   }
 
   componentWillMount() {

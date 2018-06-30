@@ -8,29 +8,7 @@ import {
 const bbcLogo = require('../../images/bbc_logo.png');
 const wsjLogo = require('../../images/wsj_logo.png');
 
-// import {
-//  StackNavigator,
-// } from 'react-navigation';
-
-// import LoginScreen from '../Login/Login';
-
 class Home extends Component {
-  // App = StackNavigator({
-  //  Home: { screen: LoginScreen },
-  // });
-
-  constructor() {
-    super();
-    this.navigate = this.navigate.bind(this);
-    this.state = {};
-  }
-
-  navigate() {
-    const { navigator } = this.props;
-
-    navigator.push({});
-  }
-
   render() {
     const { navigation } = this.props;
 
@@ -56,12 +34,10 @@ class Home extends Component {
 }
 
 Home.defaultProps = {
-  navigator: null,
   navigation: null,
 };
 
 Home.propTypes = {
-  navigator: PropTypes.node,
   navigation: PropTypes.node,
 };
 
