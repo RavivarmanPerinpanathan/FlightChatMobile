@@ -1,46 +1,9 @@
-// import liraries
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  View, Text, TextInput, TouchableOpacity, StyleSheet, Button, Alert, StatusBar, NavigatorIOS,
+  View, Text, TextInput, TouchableOpacity, StyleSheet,
 } from 'react-native';
 
-// create a component
-class LoginForm extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <TextInput
-          style={styles.input}
-          autoCapitalize="none"
-          onSubmitEditing={() => this.passwordInput.focus()}
-          autoCorrect={false}
-          keyboardType="email-address"
-          returnKeyType="next"
-          placeholder="Email"
-          placeholderTextColor="rgba(225,225,225,0.7)"
-        />
-
-        <TextInput
-          style={styles.input}
-          returnKeyType="go"
-          ref={input => this.passwordInput = input}
-          placeholder="Password"
-          placeholderTextColor="rgba(225,225,225,0.7)"
-          secureTextEntry
-        />
-
-        <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.navigate('Bbc')}>
-          <Text style={styles.buttonText}>
-LOGIN
-          </Text>
-        </TouchableOpacity>
-      </View>
-    );
-  }
-}
-
-// define your styles
 const styles = StyleSheet.create({
   container: {
     padding: 20,
@@ -63,5 +26,54 @@ const styles = StyleSheet.create({
   },
 });
 
+// create a component
+class LoginForm extends Component {
+  render() {
+    const { navigation } = this.props;
+
+    return (
+      <View style={styles.container}>
+        <TextInput
+          style={styles.input}
+          autoCapitalize="none"
+          onSubmitEditing={() => this.passwordInput.focus()}
+          autoCorrect={false}
+          keyboardType="email-address"
+          returnKeyType="next"
+          placeholder="Email"
+          placeholderTextColor="rgba(225,225,225,0.7)"
+        />
+
+        <TextInput
+          style={styles.input}
+          returnKeyType="go"
+          ref={input => this.passwordInput = input} // eslint-disable-line
+          placeholder="Password"
+          placeholderTextColor="rgba(225,225,225,0.7)"
+          secureTextEntry
+        />
+
+        <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('Bbc')}>
+          <Text style={styles.buttonText}>
+LOGIN
+          </Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
+}
+
+// define your styles
+
+
 // make this component available to the app
+
+LoginForm.defaultProps = {
+  navigation: null,
+};
+
+LoginForm.propTypes = {
+  navigation: PropTypes.node,
+};
+
 export default LoginForm;

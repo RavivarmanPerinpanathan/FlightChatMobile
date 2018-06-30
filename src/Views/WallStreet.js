@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {
-  Text, View, StyleSheet, Image, FlatList, WebView, Linking,
+  Text, View, FlatList, Linking,
 } from 'react-native';
 import {
-  Card, ListItem, Button, Icon, SCREEN_WIDTH, SCREEN_HEIGHT,
+  Card, Button, Icon,
 } from 'react-native-elements';
 import api from '../../config/api';
 
@@ -13,6 +13,14 @@ class WallStreet extends Component {
     this.state = {
       data: [],
     };
+  }
+
+  componentWillMount() {
+    api.getWallStreet().then((res) => {
+      this.setState({
+        data: res.articles,
+      });
+    });
   }
 
   renderItem = ({ item }) => (
@@ -41,20 +49,13 @@ class WallStreet extends Component {
     </View>
   )
 
-  componentWillMount() {
-    api.getWallStreet().then((res) => {
-      this.setState({
-        data: res.articles,
-      });
-    });
-  }
-
   render() {
-    // console.log("Rovers: ", this.state.data);
+    const { data } = this.state;
+
     return (
       <View>
         <FlatList
-          data={this.state.data}
+          data={data}
           renderItem={this.renderItem}
           keyExtractor={() => Math.random().toString(36).substr(2, 9)}
         />
@@ -63,27 +64,5 @@ class WallStreet extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  Card: {
-    flex: 1,
-    width: 100,
-    height: 100,
-  },
-  user: {
-    padding: 20,
-  },
-  image: {
-    height: 100,
-    width: 50,
-    backgroundColor: 'rgba(225,225,225,0.2)',
-    marginBottom: 10,
-    padding: 10,
-    color: '#fff',
-  },
-  name: {
-    backgroundColor: '#2980b6',
-    paddingVertical: 15,
-  },
-});
 
 export default WallStreet;

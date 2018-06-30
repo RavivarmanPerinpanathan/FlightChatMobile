@@ -1,30 +1,10 @@
 // import liraries
-import React, { Component } from 'react';
+import React from 'react';
 import {
-  View, Text, StyleSheet, Image, KeyboardAvoidingView,
+  View, StyleSheet, Image, KeyboardAvoidingView,
 } from 'react-native';
-import { AppRegistry } from 'react-native';
 import LoginForm from './LoginForm';
 
-// create a component
-class Login extends React.Component {
-  render() {
-    return (
-    // ios View = KeyboardAvoidingView
-      <KeyboardAvoidingView behavior="padding" style={styles.container}>
-        <View style={styles.loginContainer}>
-          <Image resizeMode="contain" style={styles.logo} source={require('../../images/Logo.png')} />
-        </View>
-
-        <View style={styles.formContainer}>
-          <LoginForm />
-        </View>
-      </KeyboardAvoidingView>
-    );
-  }
-}
-
-// define your styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -42,5 +22,16 @@ const styles = StyleSheet.create({
   },
 });
 
-// make this component available to the app
+const Login = () => (
+  <KeyboardAvoidingView behavior="padding" style={styles.container}>
+    <View style={styles.loginContainer}>
+      <Image resizeMode="contain" style={styles.logo} source={require('../../images/Logo.png')} />
+    </View>
+
+    <View style={styles.formContainer}>
+      <LoginForm />
+    </View>
+  </KeyboardAvoidingView>
+);
+
 export default Login;

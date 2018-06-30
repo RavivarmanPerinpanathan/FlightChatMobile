@@ -1,38 +1,10 @@
 // import liraries
-import React, { Component } from 'react';
+import React from 'react';
 import {
-  View, Text, StyleSheet, Image, KeyboardAvoidingView,
+  View, StyleSheet, Image, KeyboardAvoidingView,
 } from 'react-native';
-import { AppRegistry } from 'react-native';
 import RegisterForm from './RegisterForm';
 
-// create a component
-class Register extends React.Component {
-  /* static navigationOptions = {
-        tabBarIcon:({tinyColor}) => (
-            <Image
-             source={require('../../images/Logo.png')}
-             style={{width:22, height:22, tinyColor:'white'}}>
-            </Image>
-        )
-    } */
-  render() {
-    return (
-    // ios View = KeyboardAvoidingView
-      <KeyboardAvoidingView behavior="padding" style={styles.container}>
-        <View style={styles.registerContainer}>
-          <Image resizeMode="contain" style={styles.logo} source={require('../../images/Logo.png')} />
-        </View>
-
-        <View style={styles.formContainer}>
-          <RegisterForm />
-        </View>
-      </KeyboardAvoidingView>
-    );
-  }
-}
-
-// define your styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -50,5 +22,16 @@ const styles = StyleSheet.create({
   },
 });
 
-// make this component available to the app
+const Register = () => (
+  <KeyboardAvoidingView behavior="padding" style={styles.container}>
+    <View style={styles.registerContainer}>
+      <Image resizeMode="contain" style={styles.logo} source={require('../../images/Logo.png')} />
+    </View>
+
+    <View style={styles.formContainer}>
+      <RegisterForm />
+    </View>
+  </KeyboardAvoidingView>
+);
+
 export default Register;
