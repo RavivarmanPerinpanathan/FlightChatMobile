@@ -22,6 +22,7 @@ var api = {
         return fetch(url).then((res)=> res.json());
     },
     login(user , password) {
+        console.log('in here')
         return fetch('https://reqres.in/api/login', {
             method : 'POST',
             body: JSON.stringify({
