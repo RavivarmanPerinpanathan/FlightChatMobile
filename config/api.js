@@ -20,7 +20,36 @@ var api = {
     getWallStreet(){
         var url = 'https://newsapi.org/v2/everything?domains=wsj.com&apiKey=44d043ee9dcd436da97fc71880cf3a1b';
         return fetch(url).then((res)=> res.json());
-    }
+    },
+    login(user , password) {
+        return fetch('https://reqres.in/api/login', {
+            method : 'POST',
+            body: JSON.stringify({
+                login: user,
+                password: password,
+              }),
+
+        })
+    .catch((error) => {
+      console.error(error);
+    });
+    },  
+    signup(user , password) {
+      return fetch('https://reqres.in/api/signup', {
+            method : 'POST',
+            body: JSON.stringify({
+                login: user,
+                password: password,
+              }),
+
+        })
+    .catch((error) => {
+      console.error(error);
+    });
+    },
+    
+
+    
 };
 
 module.exports = api;

@@ -1,5 +1,6 @@
 //import liraries
 import React, { Component } from 'react';
+import api from '../../config/api';
 import PropTypes from 'prop-types';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Button, Alert, StatusBar, NavigatorIOS} from 'react-native';
 
@@ -10,9 +11,10 @@ class LoginForm extends Component {
             <View style={styles.container}>
                 <TextInput style = {styles.input} 
                autoCapitalize="none" 
-               onSubmitEditing={() => this.passwordInput.focus()} 
                autoCorrect={false} 
                keyboardType='email-address' 
+               ref={(input)=> this.loginInput = input}
+               onSubmitEditing={() => this.passwordInput.focus()} 
                returnKeyType="next" 
                placeholder='Email' 
                placeholderTextColor='rgba(225,225,225,0.7)'/>
@@ -24,7 +26,7 @@ class LoginForm extends Component {
                             placeholderTextColor='rgba(225,225,225,0.7)' 
                             secureTextEntry/>
 
-                <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.navigate('Bbc')}>
+                <TouchableOpacity style={styles.buttonContainer} onPress={() => api.login(this.userInput, this.passwordInput)}>
                             <Text  style={styles.buttonText}>LOGIN</Text>
                 </TouchableOpacity>
             </View>
